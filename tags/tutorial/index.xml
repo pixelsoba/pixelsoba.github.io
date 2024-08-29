@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Pixelsoba&#39;s blog</title>
+    <link>http://localhost:1313/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Pixelsoba&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2024, Augustin Ambiehl</copyright>
+    <lastBuildDate>Sat, 12 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GODOT: 9 Tips for creating GUI</title>
+      <link>http://localhost:1313/post/2-9tips-godot-gui/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2-9tips-godot-gui/</guid>
+      <description>The Godot game engine offers a flexible but very powerful interface creation system. This system is composed of a set of Nodes inheriting from the Control node. They are all shown in green in the engine.&#xA;Most of the following tips are quite straightforward but are important to understand and master before tackling your Graphical User Interfaces with Godot.&#xA;Summary Tip 1: Anchors VS Margins Tip 2: Always set the MinSize first Tip 3: Remember to use SizeFlags with Containers Tip 4: Use Control node to frame and structure Tip 5: Do not forget the CanvasLayer &amp;hellip; Tip 6: &amp;hellip; nor the ReferenceRect Tip 7: Always use _gui_input(event) Tip 8: Theme or Textures Tip 1: Anchors VS Margins Where Godot&amp;rsquo;s Node2D only work with a Transform (translation, rotation, scale), the Control bring the notion of size and therefore the concept of anchors and margins.</description>
+    </item>
+  </channel>
+</rss>

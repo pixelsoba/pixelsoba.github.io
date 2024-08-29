@@ -1,0 +1,456 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>GODOT : 9 Tips pour la création d&#39;interfaces - Pixelsoba&#39;s blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Le moteur de jeux Godot propose un système de création d&rsquo;interfaces souple mais très puissant. Ce système se compose d&rsquo;un ensemble d&rsquo;objets héritants du node Control et qui sont représentés en vert dans le moteur. La plupart des tips/conseils suivants sont assez simples mais il est important de les comprendre et de les maitriser avant de s&rsquo;attaquer à ses interfaces avec Godot.
+Sommaire Tip 1 : Anchors VS Margins Tip 2 : Toujours commencer par régler la MinSize Tip 3 : Pensez aux SizeFlags avec des Containers Tip 4 : Utiliser le node Control pour structurer Tip 5 : Ne pas oublier les CanvasLayer &hellip; Tip 6 : &hellip; ni les ReferenceRect Tip 7 : Toujours utiliser _gui_input(event) Tip 8 : Theme ou Textures Tip 1 : Anchors VS Margins Là où les Node2D de Godot se contentent d&rsquo;exposer une Transform (translation, rotation, scale), les Control apportent la notion de taille, ils se pilotent avec les Anchors et les Margins." />
+  <meta name="author" content="Augustin Ambiehl" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/ef333c1203724d1cb48104b2679529bb?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.133.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Pixelsoba&#39;s blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/pixesoba"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">GODOT : 9 Tips pour la création d&#39;interfaces</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Jun 12, 2021</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Augustin Ambiehl</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>Le moteur de jeux Godot propose un système de création d&rsquo;interfaces souple mais très puissant. Ce système se compose d&rsquo;un ensemble d&rsquo;objets héritants du node <strong>Control</strong> et qui sont représentés en vert dans le moteur. La plupart des tips/conseils suivants sont assez simples mais il est important de les comprendre et de les maitriser avant de s&rsquo;attaquer à ses interfaces avec Godot.</p>
+<h1 id="sommaire">Sommaire</h1>
+<h5 id="-tip-1--anchors-vs-marginshahahugoshortcode5s0hbhb"><a href="#tip-1"> Tip 1 : Anchors VS Margins</a></h5>
+<h5 id="-tip-2--toujours-commencer-par-régler-la-minsizehahahugoshortcode5s1hbhb"><a href="#tip-2"> Tip 2 : Toujours commencer par régler la MinSize</a></h5>
+<h5 id="-tip-3--pensez-aux-sizeflags-avec-des-containershahahugoshortcode5s2hbhb"><a href="#tip-3"> Tip 3 : Pensez aux SizeFlags avec des Containers</a></h5>
+<h5 id="-tip-4--utiliser-le-node-control-pour-structurerhahahugoshortcode5s3hbhb"><a href="#tip-4"> Tip 4 : Utiliser le node Control pour structurer</a></h5>
+<h5 id="-tip-5--ne-pas-oublier-les-canvaslayer-hahahugoshortcode5s4hbhb"><a href="#tip-5"> Tip 5 : Ne pas oublier les CanvasLayer &hellip;</a></h5>
+<h5 id="-tip-6---ni-les-referencerecthahahugoshortcode5s5hbhb"><a href="#tip-6"> Tip 6 : &hellip; ni les ReferenceRect</a></h5>
+<h5 id="-tip-7--toujours-utiliser-_gui_inputeventhahahugoshortcode5s6hbhb"><a href="#tip-7"> Tip 7 : Toujours utiliser _gui_input(event)</a></h5>
+<h5 id="-tip-8--theme-ou-textureshahahugoshortcode5s7hbhb"><a href="#tip-8"> Tip 8 : Theme ou Textures</a></h5>
+<h1 id="tip-1">Tip 1 : Anchors VS Margins</h1>
+<p>Là où les <strong>Node2D</strong> de Godot se contentent d&rsquo;exposer une Transform (translation, rotation, scale), les <strong>Control</strong> apportent la notion de taille, ils se pilotent avec les Anchors et les Margins.</p>
+<p>À savoir pour les <strong>Anchors</strong> :</p>
+<ul>
+<li>Elles sont représentées par des <strong>pins verts</strong> qui délimitent un rectangle.</li>
+<li>Elles s&rsquo;expriment en <strong>proportion de la taille du parent</strong> à l&rsquo;aide d&rsquo;un facteur (autour de 0 et 1).</li>
+<li>Elles <strong>s&rsquo;adaptent dynamiquement</strong> au changement de position ou de taille du parent.</li>
+<li>Par exemple, si un Control A ayant une Anchors.bottom = 0.8 est placé dans un Control de hauteur 720 pixels, le bas de Control A sera défini à 720 * 0.8 = 576 pixels.</li>
+</ul>
+<p>À savoir pour les <strong>Margins</strong> :</p>
+<ul>
+<li>Elles sont représentées par un <strong>rectangle orange</strong> et huit manipulateurs, pour chaque coins et chaque bords.</li>
+<li>Elles interviennent après que les anchors aient déterminé la taille du Controle par rapport à son parent.</li>
+<li>Elles permettent d&rsquo;ajouter (ou soustraire) <strong>un offset en pixel par rapport à la position définie par l&rsquo;Anchors</strong>.</li>
+<li>Par exemple, le bas notre Control A a été défini à <em>720 * 0.8 =</em> 576 pixels par rapport à son parent, cependant s&rsquo;il indique une Margin.bottom = -100, le bas du Control A sera alors défini à 720 * 0.8 - 100 = 476 pixels du haut de son parent.</li>
+</ul>
+<p>Dans l&rsquo;exemple ci-dessous, on crée un <strong>Control</strong> vert parenté dans un <strong>Control</strong> rouge. Les Anchors sont ignorées, mais cela n&rsquo;empêche pas de bien déplacer le rectangle vert lorsque son parent est déplacé.</p>
+<img src="\images\blogPosts\2_godot_gui\move_no_anchors.gif" style="display: block; height: 366px; text-align:center; margin:auto" />
+<p>Cependant si on resize le parent, aucune modification n&rsquo;est répercutée sur l&rsquo;enfant. Ce comportement n&rsquo;est pas peut-être pas ce que l&rsquo;on souhaiterait.</p>
+<img src="\images\blogPosts\2_godot_gui\scale_no_anchors.gif" style="display: block; height: 366px; text-align:center; margin:auto" />
+<p>Si l&rsquo;on souhaite que le rectangle vert reste bien au centre en haut de son parent, il est alors possible de régler les Anchors au centre en haut du parent. Le rectangle vert réagit correctement au changement de taille de son parent.</p>
+<img src="\images\blogPosts\2_godot_gui\scale_with_anchors.gif" style="display: block; height: 366px; text-align:center; margin:auto" />
+<p>Afin de faciliter le placement des Anchors et Margins, Godot propose un système avec un ensemble de layouts prédéfinis au travers d&rsquo;un menu au dessus du viewport de l&rsquo;éditeur :</p>
+<img src="\images\blogPosts\2_godot_gui\layout.png" style="display: block; text-align:left; margin:auto" />
+<h1 id="tip-2">Tip 2 : Toujours commencer par régler la MinSize</h1>
+<p>Ne pas avoir régler de MinSize est certainement la plus grande source de frustration lorsqu&rsquo;on commence à jouer avec les Controls. Il est essentiel de savoir si l&rsquo;on souhaite que son Control ne puisse être réduit à moins d&rsquo;une certaine taille en largeur et/ou en hauteur.</p>
+<p>Et c&rsquo;est ici que ça se passe :</p>
+<img src="\images\blogPosts\2_godot_gui\minsize.png" style="display: block; text-align:left; margin:auto" />
+<p>Uniquement en réglant la MinSize puis en appliquant un Layout, il est déjà possible de gérer un grand nombre de cas. J&rsquo;ai par exemple réalisé l&rsquo;interface suivante en utilisant seulement des <strong>Control</strong> et des <strong>TextureRect</strong> (intégration d&rsquo;<a href="https://opengameart.org/content/rpg-game-ui">assets dessinés par Wyrmheart pour opengameart</a>).</p>
+<img src="\images\blogPosts\2_godot_gui\medui_minsize.gif" style="display: block; text-align:left; margin:auto" />
+<h1 id="tip-3">Tip 3 : Pensez aux SizeFlags avec des Containers</h1>
+<p>Le système de layout est très utile mais parfois, au moment où l&rsquo;on a le plus besoin d&rsquo;eux, ils apparaissent grisés et ne sont pas disponibles. Cela se produit lorsque le Control que l&rsquo;on souhaite redimensionner a pour parent un Container en charge du redimensionnement de ses enfants.</p>
+<p>Dans cet exemple, on a deux rectangles verts agencés dans un <strong>HBoxContainer</strong> délimité en rouge. Malheureusement l&rsquo;option Layout n&rsquo;est pas disponible et la modification manuelle des Anchors et Margins et automatiquement annulés par le Container.</p>
+<img src="\images\blogPosts\2_godot_gui\size_flags.png" style="display: block; text-align:center; margin:auto" />
+<p>Les seules options permettant de modifier la taille d&rsquo;un Control situé sous un Container sont la <strong>MinSize et le SizeFlags</strong> tout deux présents dans l&rsquo;inspecteur. Dans notre exemple il devient possible d&rsquo;autoriser les éléments à occuper toute la place possible horizontalement avec le SizeFlags Horizontal.Expand = true.</p>
+<img src="\images\blogPosts\2_godot_gui\sizeflags_1.gif" style="display: block; text-align:center; margin:auto" />
+<p>Ce système permet également une adaptation directe avec des nouveaux éléments.</p>
+<img src="\images\blogPosts\2_godot_gui\sizeflags_duplicate.gif" style="display: block; text-align:center; margin:auto" />
+<h1 id="tip-4">Tip 4 : Utiliser le node Control pour structurer</h1>
+<p>Si un Container n&rsquo;autorise pas à ses enfants à spécifier des anchors, margins et layout, il est tout à fait possible d&rsquo;accéder à ces paramètres sur les petits-enfants du Container. Dans cette situation est possible d&rsquo;utiliser un Control intermédiaire. Il faudra penser à regler les SizeFlags correspondant sur ce dernier.</p>
+<p>En repartant de l&rsquo;exemple du point précédant, si l&rsquo;on souhaite que le rectangle du centre soit deux fois plus petit mais qu&rsquo;il prenne autant de place que les autres éléments, il est possible de procéder ainsi :</p>
+<ul>
+<li>Substituer le rectangle du centre par un <strong>Control</strong> et en faire le parent du rectangle. Il faut penser à re-regler les SizeFlags de ce Control.</li>
+<li>Régler les Anchors du rectangle à Left = 0.25, Top = 0.25, Right = 0.75, Bottom = 0.75</li>
+</ul>
+<img src="\images\blogPosts\2_godot_gui\control_structure.gif" style="display: block; text-align:center; margin:auto" />
+<h1 id="tip-5">Tip 5 : Ne pas oublier les CanvasLayer &hellip;</h1>
+<p>Quand vient le moment d&rsquo;intégrer son interface dans sa scène principal, il est important de la parenter dans un CanvasLayer si on souhaite ne pas mélanger la partie interface graphique du reste du jeu qui a lieu en arrière plan.</p>
+<img src="\images\blogPosts\2_godot_gui\canvaslayer.png" style="display: block; text-align:center; margin:auto" />
+<h1 id="tip-6">Tip 6 : &hellip; ni les ReferenceRect</h1>
+<p>Il arrive qu&rsquo;on ait à concevoir un model d&rsquo;interface qui accueillera ensuite différents contenus. C&rsquo;est pour ce rôle que les ReferenceRects existent : fournir un placeholder tangible afin d&rsquo;anticiper le comportement du futur contenu. Libre ensuite au développeur de mettre son contenu à la place, voir directement sous le ReferenceRect. En effet, un ReferenceRect n&rsquo;est visible que dans l&rsquo;éditeur, il n&rsquo;est donc pas nécessaire de le retirer à l&rsquo;utilisation.</p>
+<p>Sur l&rsquo;exemple qui suit, les deux ReferenceRect (dans l&rsquo;orbe en haut et au centre de la fenêtre) sont prets à accueillir un futur contenu.</p>
+<img src="\images\blogPosts\2_godot_gui\medui_minsize.gif" style="display: block; height: 200px; text-align:left; margin:auto" />
+<h1 id="tip-7">Tip 7 : Toujours utiliser _<em>gui_input(event)</em></h1>
+<p>Lorsqu&rsquo;on souhaite récupérer les actions de l&rsquo;utilisateurs sur un élément d&rsquo;interface, il est très important de surcharger la méthode _<em>gui_input()</em> plutôt que _<em>unhandled_input()</em> ou _<em>input()</em> . L&rsquo;interet d&rsquo;utiliser cette méthode, plutôt que celles qu&rsquo;on retrouvent avec les Node2D ou Spatial, est qu&rsquo;on a la garanti que l&rsquo;input ne sera appelé que si :</p>
+<ul>
+<li>L&rsquo;action (un click par exemple) a bien lieu dans le Control (en se basant sur la method <em>has_point()</em> )</li>
+<li>Il n&rsquo;est pas obtrué par un autre Control qui serait au dessus.</li>
+</ul>
+<p>De plus la méthode _<em>gui_input()</em> donne accès un pilotage via la propriété <em>mouse_filter</em> des nœuds héritant de Control, ainsi _<em>gui_input()</em> est appelé si :</p>
+<ul>
+<li>Le Control a bien l&rsquo;autorisation de lire l&rsquo;évènement, en ayant la propiété <em>Control.mouse_filter != MOUSE_FILTER_IGNORE</em> .</li>
+<li>Le parent du Control n&rsquo;a pas déjà consommé l&rsquo;évènement, soit bloqué l&rsquo;évènement avec <em>Control.mouse_filter == MOUSE_FILTER_STOP</em> .</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-GDScript" data-lang="GDScript"><span style="display:flex;"><span><span style="color:#75715e"># This one is good:</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_gui_input</span>(event: <span style="color:#a6e22e">InputEvent</span>)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Avoid these two:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#func _unhandled_input(event: InputEvent)):pass</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#func _input(event: InputEvent)):pass</span></span></span></code></pre></div>
+<h1 id="tip-8">Tip 8 : Theme ou Textures</h1>
+<p>Il est important de savoir avec quel type d&rsquo;interface on souhaite travailler. Globalement, il y a surtout deux possibilités qui peuvent être mélangées au besoin.
+Soit on travaille avec des assets graphiques déjà peints ou dessinés, dans ce cas il est possible d&rsquo;utiliser les Controls qui proposent de travailler avec des textures. Il s&rsquo;agit de :</p>
+<ul>
+<li><strong>NinePatchRect</strong> : pour afficher un panel qui se resize à partir d&rsquo;une seule texture, les coins sont conservé, mais les bordures et le centre sont répétés ou étirés</li>
+<li><strong>TextureRect</strong> : pour l&rsquo;affichage d&rsquo;une texture simple avec plusieurs mode de streching, tiling</li>
+<li><strong>TextureButton</strong> : pour avoir un button avec des textures pour chacun de ses états (normal/idle, pressed, hover, disabled, focus) ainsi qu&rsquo;un mask pour personnaliser sa hitbox</li>
+<li><strong>TextureProgress</strong> : pour avoir une barre de progression (temps de chargement, barre de PV/énergie&hellip;) texturée</li>
+</ul>
+<p>En plus de ces quatre nœuds, il existe leurs pendants sans texture qui sont bien plus nombreux et fonctionnent avec un système de <strong>Theme</strong>, parmi lesquels on trouve :</p>
+<ul>
+<li>Le node <strong>Button</strong>, <strong>Label</strong>, <strong>ProgressBar</strong>, <strong>Panel</strong>, <strong>Tabs</strong>, <strong>Tree</strong>, etc&hellip;</li>
+</ul>
+<p>Le système de <strong>Theme</strong> est très puissant, il est possible de réaliser des interfaces propres, parfaites pour des logiciels. L&rsquo;éditeur de Godot a été réalisé avec ce système. Sans rentrer dans les détails, le minimum a savoir pour travailler avec le système de <strong>Theme</strong> sont les éléments suivant :</p>
+<ul>
+<li>Il faut créer une ressource Theme, à appliquer sur le Control root afin que le thème se propage sur les enfants</li>
+<li>Pour personnaliser un élément précis via le <strong>Theme</strong>, il faut rendre cet élément accessible dans l&rsquo;inspecteur en sélectionnant la ressource Theme, puis <em>Edit Theme</em>, puis <em>Add class items</em>, puis l&rsquo;élément à personnaliser.</li>
+</ul>
+<img src="\images\blogPosts\2_godot_gui\texture_theme.png" style="display: block; height: 200px; text-align:left; margin:auto" />
+<p>(Retrouvez ces textures d&rsquo;interfaces <a href="https://opengameart.org/content/rpg-game-ui">ici</a>)●</p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/godot"
+      >godot</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/tutorial"
+      >tutorial</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/3-cv-inefficace/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Une façon inefficace et peu pratique de présenter un CV</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/freelancing-a-leap-into-independence/"
+      ><span>Freelancing: A Leap into Independence</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2024, Augustin Ambiehl
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

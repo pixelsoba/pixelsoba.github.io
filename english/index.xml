@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://example.org/english/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/english/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An inefficient and impractical way to present a resume</title>
+      <link>https://example.org/english/post/3-ineffective-cv/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/english/post/3-ineffective-cv/</guid>
+      <description>Lately, I&amp;rsquo;ve been experimenting a lot with Godot GUI to see what it&amp;rsquo;s capable of and to get my hands on it. What better way to do that than to start a small project? Nostalgic for Windows XP, I wanted to make a web export of a Godot project that mimics as well as possible the rendering of this Windows of 2001. And with the objective to create the biggest possible gap between these two universes which do not mix much: dev web &amp;amp; dev desktop/software.</description>
+    </item>
+    <item>
+      <title>GODOT: 9 Tips for creating GUI</title>
+      <link>https://example.org/english/post/2-9tips-godot-gui/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/english/post/2-9tips-godot-gui/</guid>
+      <description>The Godot game engine offers a flexible but very powerful interface creation system. This system is composed of a set of Nodes inheriting from the Control node. They are all shown in green in the engine.&#xA;Most of the following tips are quite straightforward but are important to understand and master before tackling your Graphical User Interfaces with Godot.&#xA;Summary Tip 1: Anchors VS Margins Tip 2: Always set the MinSize first Tip 3: Remember to use SizeFlags with Containers Tip 4: Use Control node to frame and structure Tip 5: Do not forget the CanvasLayer &amp;hellip; Tip 6: &amp;hellip; nor the ReferenceRect Tip 7: Always use _gui_input(event) Tip 8: Theme or Textures Tip 1: Anchors VS Margins Where Godot&amp;rsquo;s Node2D only work with a Transform (translation, rotation, scale), the Control bring the notion of size and therefore the concept of anchors and margins.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://example.org/english/about/</link>
+      <pubDate>Fri, 11 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/english/about/</guid>
+      <description>Hi, my name is Augustin Ambiehl. After 3 years as a C++ engineer, I am now a freelance developer.&#xA;Professional experiences I contributed to the development of internal software products based on real-time 3D with a strong cartographic component to meet the needs of hypervision and civil security. So I have a good experience on projects with large C++ code bases coupled with the Qt framework.&#xA;I have also been responsible for the development of smaller applications responding to specific customer needs, Proof of concepts or European research projects.</description>
+    </item>
+    <item>
+      <title>Freelancing: driven by a desire to progress</title>
+      <link>https://example.org/english/post/1-beginning-freelance-journey/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/english/post/1-beginning-freelance-journey/</guid>
+      <description>May 27, 2021 This date celebrates three things: my 26th birthday, the day I resigned and the beginning of this blog.&#xA;The need to move forward This need to progress has always been there, without ever having a concrete objective, but knowing that I am on a path where I make progress. After my BAC, I looked at all my friends who didn&amp;rsquo;t want to study and who directly looked for a job with a bit of incomprehension.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://example.org/english/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.org/english/archives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://example.org/english/contact/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.org/english/contact/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

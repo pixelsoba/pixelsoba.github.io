@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Godot on PixelSoba&#39;s Factory</title>
+    <link>http://localhost:1313/fr/tags/godot/</link>
+    <description>Recent content in Godot on PixelSoba&#39;s Factory</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/fr/tags/godot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Une façon inefficace et peu pratique de présenter un CV</title>
+      <link>http://localhost:1313/fr/post/3-cv-inefficace/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fr/post/3-cv-inefficace/</guid>
+      <description>Ces derniers temps, j&amp;rsquo;ai beaucoup expérimenté avec le moteur d&amp;rsquo;IHM de Godot pour voir de quoi il est capable et aussi me faire la main dessus. Quoi de mieux pour cela que de lancer dans un petit projet ? Nostalgique de Windows XP, j&amp;rsquo;ai voulu faire un export web d&amp;rsquo;un projet Godot qui imite au mieux le rendu de ce Windows de 2001. Et avec pour objectif de créer le plus gros décalage possible entre ces deux univers qui ne se mélangent que peu : dev web &amp;amp; dev desktop/logiciel.</description>
+    </item>
+    <item>
+      <title>GODOT : 9 Tips pour la création d&#39;interfaces</title>
+      <link>http://localhost:1313/fr/post/2-9tips-gui-avec-godot/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fr/post/2-9tips-gui-avec-godot/</guid>
+      <description>Le moteur de jeux Godot propose un système de création d&amp;rsquo;interfaces souple mais très puissant. Ce système se compose d&amp;rsquo;un ensemble d&amp;rsquo;objets héritants du node Control et qui sont représentés en vert dans le moteur. La plupart des tips/conseils suivants sont assez simples mais il est important de les comprendre et de les maitriser avant de s&amp;rsquo;attaquer à ses interfaces avec Godot.&#xA;Sommaire Tip 1 : Anchors VS Margins Tip 2 : Toujours commencer par régler la MinSize Tip 3 : Pensez aux SizeFlags avec des Containers Tip 4 : Utiliser le node Control pour structurer Tip 5 : Ne pas oublier les CanvasLayer &amp;hellip; Tip 6 : &amp;hellip; ni les ReferenceRect Tip 7 : Toujours utiliser _gui_input(event) Tip 8 : Theme ou Textures Tip 1 : Anchors VS Margins Là où les Node2D de Godot se contentent d&amp;rsquo;exposer une Transform (translation, rotation, scale), les Control apportent la notion de taille, ils se pilotent avec les Anchors et les Margins.</description>
+    </item>
+  </channel>
+</rss>
