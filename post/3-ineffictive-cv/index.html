@@ -49,7 +49,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -77,14 +77,14 @@
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://pixelsoba.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://pixelsoba.github.io/theme.png" />
 
   
   
@@ -96,9 +96,9 @@
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  <link rel="preload" as="image" href="https://pixelsoba.github.io/github.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  <link rel="preload" as="image" href="https://pixelsoba.github.io/linkedin.svg" />
   
   
 
@@ -106,7 +106,7 @@
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://pixelsoba.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -118,11 +118,11 @@
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://pixelsoba.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://pixelsoba.github.io/apple-touch-icon.png"
   />
 
   
@@ -131,12 +131,49 @@
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="An inefficient and impractical way to present a resume">
+  <meta itemprop="description" content="Lately, I’ve been experimenting a lot with Godot GUI to see what it’s capable of and to get my hands on it. What better way to do that than to start a small project? Nostalgic for Windows XP, I wanted to make a web export of a Godot project that mimics as well as possible the rendering of this Windows of 2001. And with the objective to create the biggest possible gap between these two universes which do not mix much: dev web &amp; dev desktop/software.">
+  <meta itemprop="datePublished" content="2021-06-21T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-06-21T00:00:00+00:00">
+  <meta itemprop="wordCount" content="764">
+  <meta itemprop="keywords" content="Godot">
+  
+  <meta property="og:url" content="https://pixelsoba.github.io/post/3-ineffictive-cv/">
+  <meta property="og:site_name" content="Pixelsoba&#39;s blog">
+  <meta property="og:title" content="An inefficient and impractical way to present a resume">
+  <meta property="og:description" content="Lately, I’ve been experimenting a lot with Godot GUI to see what it’s capable of and to get my hands on it. What better way to do that than to start a small project? Nostalgic for Windows XP, I wanted to make a web export of a Godot project that mimics as well as possible the rendering of this Windows of 2001. And with the objective to create the biggest possible gap between these two universes which do not mix much: dev web &amp; dev desktop/software.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-06-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-06-21T00:00:00+00:00">
+    <meta property="article:tag" content="Godot">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="An inefficient and impractical way to present a resume">
+  <meta name="twitter:description" content="Lately, I’ve been experimenting a lot with Godot GUI to see what it’s capable of and to get my hands on it. What better way to do that than to start a small project? Nostalgic for Windows XP, I wanted to make a web export of a Godot project that mimics as well as possible the rendering of this Windows of 2001. And with the objective to create the biggest possible gap between these two universes which do not mix much: dev web &amp; dev desktop/software.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://pixelsoba.github.io/post/3-ineffictive-cv/" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://pixelsoba.github.io/"
       >Pixelsoba&#39;s blog</a
     >
     <div
@@ -293,7 +330,7 @@
 <p>For example, in the case of the selection rectangle on the desktop, since GLES2 does not allow convincing tiling of a dotted line texture, I had to look into an algo that draws each dotted line using <em>draw_lines</em>. This solution is more elegant, but it took much more time to set up.</p>
 <p>I found that the mobile supported my application very well. However, I didn&rsquo;t anticipate that the management of touch events is not totally identical to that of classic mouse events. I was still able to make touch work by allowing touchEvents on elements that previously worked only with mouseRelease. The use of <em>touch and release</em> to interact with the ihm is not really instinctive, that&rsquo;s why I only used incoming/pressing events for the touch part.</p>
 <h1 id="conclusion">Conclusion</h1>
-<p>It&rsquo;s really a pleasure to make interfaces with Godot, the <em>Control</em> node system is really well designed (I talk about it on this post <a href="http://localhost:1313/post/2-9tips-godot-gui/" title="9 GUI tips with godot">GODOT: 9 TIPS FOR CREATING INTERFACES</a>). The editor is still fast, light and powerful. For projects of this magnitude, I don&rsquo;t know of a more efficient solution.</p>
+<p>It&rsquo;s really a pleasure to make interfaces with Godot, the <em>Control</em> node system is really well designed (I talk about it on this post <a href="https://pixelsoba.github.io/post/2-9tips-godot-gui/" title="9 GUI tips with godot">GODOT: 9 TIPS FOR CREATING INTERFACES</a>). The editor is still fast, light and powerful. For projects of this magnitude, I don&rsquo;t know of a more efficient solution.</p>
 <p>This is also the first time I&rsquo;ve forced myself to work with GLES 2 for web support. Even though GLES 3 (in WebGL 2) works for the most part on the latest browsers, it is not necessary for my purposes. Using Godot with GLES 2 for a web target is no different than using it in the traditional way, except that you have to touch up the HTML-JS template a bit if you want a more specific integration.</p>
 <p>I also paid attention to the size of my web export and to the optimization of the size of my assets. My final export is composed of two very large files compared to what we usually see in the web world: a binary (.WASM) for the engine of about 12 mo and my &ldquo;game&rdquo; and its assets in a .PCK of 6 mo. As much as I don&rsquo;t think it&rsquo;s possible to compress my assets more, it seems that it&rsquo;s possible to save some bytes on the WASM by generating a specific export of the engine in which you disable the maximum of features. Nevertheless, this is only a lesser evil because the WASM is a file that compresses very (very) efficiently, going from 12.0 MB to less than 4 MB just with gzip, which is already used during an HTTP fetch when compression is enabled on the server●</p>
 </section>
@@ -304,7 +341,7 @@
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/godot"
+      href="https://pixelsoba.github.io/tags/godot"
       >godot</a
     >
     
@@ -320,7 +357,7 @@
   >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/2-9tips-godot-gui/"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://pixelsoba.github.io/post/2-9tips-godot-gui/"
       ><span>GODOT: 9 Tips for creating GUI</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     

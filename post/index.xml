@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Pixelsoba&#39;s blog</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://pixelsoba.github.io/post/</link>
     <description>Recent content in Posts on Pixelsoba&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2024, Augustin Ambiehl</copyright>
     <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pixelsoba.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An inefficient and impractical way to present a resume</title>
-      <link>http://localhost:1313/post/3-ineffictive-cv/</link>
+      <link>https://pixelsoba.github.io/post/3-ineffictive-cv/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/3-ineffictive-cv/</guid>
+      <guid>https://pixelsoba.github.io/post/3-ineffictive-cv/</guid>
       <description>Lately, I&amp;rsquo;ve been experimenting a lot with Godot GUI to see what it&amp;rsquo;s capable of and to get my hands on it. What better way to do that than to start a small project? Nostalgic for Windows XP, I wanted to make a web export of a Godot project that mimics as well as possible the rendering of this Windows of 2001. And with the objective to create the biggest possible gap between these two universes which do not mix much: dev web &amp;amp; dev desktop/software.</description>
     </item>
     <item>
       <title>GODOT: 9 Tips for creating GUI</title>
-      <link>http://localhost:1313/post/2-9tips-godot-gui/</link>
+      <link>https://pixelsoba.github.io/post/2-9tips-godot-gui/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2-9tips-godot-gui/</guid>
+      <guid>https://pixelsoba.github.io/post/2-9tips-godot-gui/</guid>
       <description>The Godot game engine offers a flexible but very powerful interface creation system. This system is composed of a set of Nodes inheriting from the Control node. They are all shown in green in the engine.&#xA;Most of the following tips are quite straightforward but are important to understand and master before tackling your Graphical User Interfaces with Godot.&#xA;Summary Tip 1: Anchors VS Margins Tip 2: Always set the MinSize first Tip 3: Remember to use SizeFlags with Containers Tip 4: Use Control node to frame and structure Tip 5: Do not forget the CanvasLayer &amp;hellip; Tip 6: &amp;hellip; nor the ReferenceRect Tip 7: Always use _gui_input(event) Tip 8: Theme or Textures Tip 1: Anchors VS Margins Where Godot&amp;rsquo;s Node2D only work with a Transform (translation, rotation, scale), the Control bring the notion of size and therefore the concept of anchors and margins.</description>
     </item>
     <item>
       <title>Freelancing: A Leap into Independence</title>
-      <link>http://localhost:1313/post/freelancing-a-leap-into-independence/</link>
+      <link>https://pixelsoba.github.io/post/freelancing-a-leap-into-independence/</link>
       <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/freelancing-a-leap-into-independence/</guid>
+      <guid>https://pixelsoba.github.io/post/freelancing-a-leap-into-independence/</guid>
       <description>May 27, 2021 This date celebrates three things: my 26th birthday, the day I resigned, and the beginning of this blog.&#xA;The need to move forward I&amp;rsquo;ve always had this need to progress, even without a concrete objective, but knowing that I&amp;rsquo;m on a path where I&amp;rsquo;m making progress. After my BAC (high school diploma), I looked at all my friends who didn&amp;rsquo;t want to continue studying and went straight into work with some confusion.</description>
     </item>
   </channel>
